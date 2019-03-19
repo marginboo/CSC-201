@@ -1,0 +1,1704 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>cs2</name>
+    </assembly>
+    <members>
+        <member name="T:cs2.ArrayQueue`1">
+            <summary>
+            Simple generic queue class, using an array.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.ArrayQueue`1.data">
+            <summary>The array of data.</summary>
+        </member>
+        <member name="F:cs2.ArrayQueue`1.hd">
+            <summary>Index of the item at the head (front) of the queue.</summary>
+        </member>
+        <member name="F:cs2.ArrayQueue`1.tl">
+            <summary>Index of the item at the tail (back) of the queue.</summary>
+        </member>
+        <member name="M:cs2.ArrayQueue`1.#ctor(System.Int32)">
+            <summary>
+            Create an empty queue, with a given capacity.
+            <para><I>Precondition:</I> <CODE>initSize > 0</CODE>.</para>
+            <para><I>Postcondition:</I> The queue is initialised and is empty.</para>
+            </summary>
+            <param name="initSize">The maximum size of the queue.</param>
+        </member>
+        <member name="M:cs2.ArrayQueue`1.#ctor">
+            <summary>
+            Create an empty queue, with a default capacity of 100 elements.
+            </summary>
+        </member>
+        <member name="M:cs2.ArrayQueue`1.Add(`0)">
+            <summary>
+            Add an item to the back of a queue.
+            <para><I>Precondition:</I> There is space available in the queue.</para>
+            <para><I>Postcondition:</I> The queue is not empty.</para>
+            </summary>
+            <param name="item">The item to be added to the queue.</param>
+            <exception cref="T:cs2.NoSpaceAvailableException">if the queue's capacity is exceeded.</exception>
+        </member>
+        <member name="M:cs2.ArrayQueue`1.Remove">
+            <summary>
+            Remove an item from the front of a queue.
+            <para><I>Precondition:</I> The queue is not empty.</para>
+            </summary>
+            <returns>The item removed from the front of the queue.</returns>
+            <exception cref="T:cs2.EmptyException">if the queue is empty.</exception>
+        </member>
+        <member name="M:cs2.ArrayQueue`1.Head">
+            <summary>
+            Return a copy of the item at the front of a queue, without removing it.
+            <para><I>Precondition:</I> The queue is not empty.</para>
+            </summary>
+            <returns>The value of the item at the front of the queue.</returns>
+            <exception cref="T:cs2.EmptyException">if the queue is empty.</exception>
+        </member>
+        <member name="M:cs2.ArrayQueue`1.IsEmpty">
+            <summary>Tell whether the queue is empty.</summary>
+            <returns><CODE>true</CODE> if there are no items in the queue, otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="T:cs2.ArrayStack`1">
+            <summary>
+            Simple generic stack class using an array.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.ArrayStack`1.data">
+            <summary>The array of data.</summary>
+        </member>
+        <member name="F:cs2.ArrayStack`1.topIndex">
+            <summary>The position of the top element.</summary>
+        </member>
+        <member name="M:cs2.ArrayStack`1.#ctor(System.Int32)">
+            <summary>
+            Create a new stack, with a given capacity.
+            <para><I>Precondition:</I> <CODE>initSize > 0</CODE>.</para>
+            <para><I>Postcondition:</I> The stack is initialised and is empty.</para>
+            </summary>
+            <param name="initSize">The maximum capacity of the stack.</param>
+        </member>
+        <member name="M:cs2.ArrayStack`1.#ctor">
+            <summary>
+            Create a new stack with a default capacity of 100 items.
+            </summary>
+        </member>
+        <member name="M:cs2.ArrayStack`1.Push(`0)">
+            <summary>
+            Push a new item onto a stack.
+            <para><I>Precondition:</I> There is space available in the stack.</para>
+            <para><I>Postcondition:</I> The stack is not empty.</para>
+            </summary>
+            <param name="item">The item to be pushed onto the stack.</param>
+            <exception cref="T:cs2.NoSpaceAvailableException">if the stack capacity is exceeded.</exception>
+        </member>
+        <member name="M:cs2.ArrayStack`1.Pop">
+            <summary>
+            Pop an item off the top of the stack.
+            <para><I>Precondition:</I> The stack is not empty.</para>
+            </summary>
+            <returns>The item that was popped off the stack.</returns>
+            <exception cref="T:cs2.EmptyException">if the stack is empty.</exception>
+        </member>
+        <member name="M:cs2.ArrayStack`1.Top">
+            <summary>
+            Return a copy of the item on the top of the stack, without removing
+            it.
+            <para><I>Precondition:</I> The stack is not empty.</para>
+            </summary>
+            <returns>The value of the item on the top of the stack.</returns>
+            <exception cref="T:cs2.EmptyException">if the stack is empty.</exception>
+        </member>
+        <member name="M:cs2.ArrayStack`1.IsEmpty">
+            <summary>
+            Tell whether the stack is empty.
+            </summary>
+            <returns><CODE>true</CODE> if there are no items on the stack, otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="T:cs2.Search">
+            <summary>
+            This class contains two searching algorithms:
+            a generic binary search and an interpolated binary search for
+            lists of double values.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 October 2013)
+            </remarks>
+        </member>
+        <member name="M:cs2.Search.BinarySearch``1(``0[],``0)">
+            <summary>
+            Search through list of entries for an item using a binary search.
+            <para><I>Precondition:</I> The list must be sorted into ascending order.</para>
+            <para><I>Postcondition:</I> Returns -1 if item is not found, otherwise
+               returns the index of item.</para>
+            <para>This method requires that the data implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para>This search is of order log <I>n</I>.</para>
+            </summary>
+            <param name="list">The list of items to be searched.</param>
+            <param name="item">The item being searched for.</param>
+            <returns>-1 if <CODE>item</CODE> is not found, otherwise returns the index of item.</returns>
+        </member>
+        <member name="M:cs2.Search.IntBinarySearch(System.Double[],System.Double)">
+            <summary>
+            Search through list of entries for an item using an interpolated binary search.
+            <para><I>Precondition:</I> The list must be sorted into ascending order.</para>
+            <para><I>Postcondition:</I> Returns -1 if item is not found, otherwise
+               returns the index of item.</para>
+            <para>This method requires that the data consists of <CODE>double</CODE> values for
+               the interpolation.</para>
+            <para>This search is of order log log <I>n</I>.</para>
+            </summary>
+            <param name="list">The list of items (<CODE>double</CODE> values) to be searched.</param>
+            <param name="item">The item (a <CODE>double</CODE> value) being searched for.</param>
+            <returns>-1 if <CODE>item</CODE> is not found, otherwise returns the index of item.</returns>
+        </member>
+        <member name="T:cs2.BinarySearchTree`1">
+            <summary>
+            Simple generic binary search tree class.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.BinarySearchTree`1.root">
+            <summary>The root of the entire tree.</summary>
+        </member>
+        <member name="M:cs2.BinarySearchTree`1.#ctor">
+            <summary>
+            Create an empty binary search tree.
+            <para><I>Postcondition:</I> The tree is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.BinarySearchTree`1.Insert(`0)">
+            <summary>
+            Insert an item into the binary search tree.
+            <para><I>Postcondition:</I> The tree is not empty.</para>
+            </summary>
+            <param name="newValue">The item to be inserted into the tree.</param>
+        </member>
+        <member name="M:cs2.BinarySearchTree`1.Remove(`0)">
+            <summary>
+            Remove an item from the tree.  If the item is duplicated in the tree, only the
+            first instance found is removed.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> If the item was found in the tree, it has been removed.</para>
+            </summary>
+            <param name="value">The item to be removed from the tree.</param>
+        </member>
+        <member name="M:cs2.BinarySearchTree`1.Contains(`0)">
+            <summary>
+            Tell whether an item appears in the tree.
+            </summary>
+            <returns><CODE>true</CODE> if the item is found, otherwise <CODE>false</CODE>.</returns>
+            <param name="value">The item to be found in the tree.</param>
+        </member>
+        <member name="M:cs2.BinarySearchTree`1.GetLNRIterator">
+            <summary>
+            Obtain an interator that can be used to work through all of the data contained
+            in the tree using an in-order traversal.
+            <para><B>Note:</B> This iterator makes a copy of the contents of the tree.  Any subsequent
+            changes to the structure of the tree will <EM>not</EM> be reflected by this iterator.</para>
+            </summary>
+            <returns>An <CODE>Iterator</CODE> allowing the contents of the tree to be accessed in order.</returns>
+        </member>
+        <member name="M:cs2.BinarySearchTree`1.GetNLRIterator">
+            <summary>
+            Obtain an interator that can be used to work through all of the data contained
+            in the tree using a pre-order traversal.
+            <para><B>Note:</B> This iterator makes a copy of the contents of the tree.  Any subsequent
+            changes to the structure of the tree will <EM>not</EM> be reflected by this iterator.</para>
+            </summary>
+            <returns>An <CODE>Iterator</CODE> allowing the contents of the tree to be accessed in pre-order.</returns>
+        </member>
+        <member name="M:cs2.BinarySearchTree`1.GetLRNIterator">
+            <summary>
+            Obtain an interator that can be used to work through all of the data contained
+            in the tree using a post-order traversal.
+            <para><B>Note:</B> This iterator makes a copy of the contents of the tree.  Any subsequent
+            changes to the structure of the tree will <EM>not</EM> be reflected by this iterator.</para>
+            </summary>
+            <returns>An <CODE>Iterator</CODE> allowing the contents of the tree to be accessed in post-order.</returns>
+        </member>
+        <member name="T:cs2.Deque`1">
+            <summary>
+            Simple generic deque class using a circular, doubly linked
+            list with a header node.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.Deque`1.header">
+            <summary>Reference to the header node of the deque.</summary>
+        </member>
+        <member name="M:cs2.Deque`1.#ctor">
+            <summary>
+            Create an empty deque.
+            <para><I>Postcondition:</I> The deque is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.Deque`1.AddLeft(`0)">
+            <summary>
+            Add an item to the left end of the deque.
+            <para><I>Postcondition:</I> The deque is not empty.</para>
+            </summary>
+            <param name="item">The item to be added to the deque.</param>
+        </member>
+        <member name="M:cs2.Deque`1.AddRight(`0)">
+            <summary>
+            Add an item to the right end of the deque.
+            <para><I>Postcondition:</I> The deque is not empty.</para>
+            </summary>
+            <param name="item">The item to be added to the deque.</param>
+        </member>
+        <member name="M:cs2.Deque`1.RemoveLeft">
+            <summary>
+            Remove an item from the left end of the deque.
+            <para><I>Precondition:</I> The deque is not empty.</para>
+            <para><I>Postcondition:</I> The item at the left end of the deque is removed and returned.</para>
+            </summary>
+            <returns>The item from the left end of the deque.</returns>
+            <exception cref="T:cs2.EmptyException">if the deque is empty.</exception>
+        </member>
+        <member name="M:cs2.Deque`1.RemoveRight">
+            <summary>
+            Remove an item from the right end of the deque.
+            <para><I>Precondition:</I> The deque is not empty.</para>
+            <para><I>Postcondition:</I> The item at the right end of the deque is removed and returned.</para>
+            </summary>
+            <returns>The item from the right end of the deque.</returns>
+            <exception cref="T:cs2.EmptyException">if the deque is empty.</exception>
+        </member>
+        <member name="M:cs2.Deque`1.LeftHead">
+            <summary>
+            Return a copy of the item at the left end of the deque.
+            <para><I>Precondition:</I> The deque is not empty.</para>
+            <para><I>Postcondition:</I> The item at the left end of the deque is returned.</para>
+            </summary>
+            <returns>The value of the item at the left end of the deque.</returns>
+            <exception cref="T:cs2.EmptyException">if the deque is empty.</exception>
+        </member>
+        <member name="M:cs2.Deque`1.RightHead">
+            <summary>
+            Return a copy of the item at the right end of the deque.
+            <para><I>Precondition:</I> The deque is not empty.</para>
+            <para><I>Postcondition:</I> The item at the right end of the deque is returned.</para>
+            </summary>
+            <returns>The value of the item at the right end of the deque.</returns>
+            <exception cref="T:cs2.EmptyException">if the deque is empty.</exception>
+        </member>
+        <member name="M:cs2.Deque`1.IsEmpty">
+            <summary>
+            Tell whether the deque is empty.
+            </summary>
+            <returns><CODE>true</CODE> if there are no items in the deque, otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="T:cs2.IDictionary`2">
+            <summary>
+            Interface describing the implementation of simple dictionary ADT's.  Used by
+            dictionary and hash table ADT's.  The specification provides for the storage of
+            data accessed by specifying a <EM>key</EM> value.
+            <para>For all ADT's implementing this interface there is an assumption that the keys are
+            unique.</para>
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 October 2013)
+            </remarks>
+            <typeparam name="K">Type of the keys</typeparam>
+            <typeparam name="V">Type of the associated values</typeparam>
+        </member>
+        <member name="M:cs2.IDictionary`2.MakeEmpty">
+            <summary>
+            Delete all the entries in a dictionary ADT.
+            <para><I>Postcondition:</I> The dictionary is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.IDictionary`2.Insert(`0,`1)">
+            <summary>
+            Add an item to a dictionary ADT.  If the specified key is already
+            present then the existing value is replaced by that specified here.
+            <para><I>Postcondition:</I> The dictionary is not empty.</para>
+            </summary>
+            <param name="aKey">The key to be added.</param>
+            <param name="aValue">The associated value to be stored with the key.</param>
+        </member>
+        <member name="M:cs2.IDictionary`2.Insert(`0)">
+            <summary>
+            Add a key to a dictionary ADT without an associated value.
+            <para><I>Postcondition:</I> The dictionary is not empty.</para>
+            </summary>
+            <param name="aKey">The key to be added.</param>
+        </member>
+        <member name="M:cs2.IDictionary`2.Remove(`0)">
+            <summary>
+            Remove an item from a dictionary ADT.
+            <para><I>Postcondition:</I> The item specified by the given key is no longer present.</para>
+            </summary>
+            <param name="aKey">The key of the entry to be removed.</param>
+        </member>
+        <member name="M:cs2.IDictionary`2.Get(`0)">
+            <summary>
+            Access an entry in a dictionary ADT.  Note that this method
+            should add the specified key if it is not already present.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The value associated with the specified key is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns>The value associated with the specified key is returned (<CODE>null</CODE> if the
+            key was not previously present).</returns>
+        </member>
+        <member name="M:cs2.IDictionary`2.Contains(`0)">
+            <summary>
+            Tell whether a dictionary contains a specified key.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the key is present in the dictionary
+            is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns><CODE>true</CODE> if the specified key is found in the dictionary,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.IDictionary`2.IsEmpty">
+            <summary>
+            Tell whether a dictionary is empty.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the dictionary is empty
+            is returned.</para>
+            </summary>
+            <returns><CODE>true</CODE> if the dictionary is empty,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.IDictionary`2.GetIterator">
+            <summary>
+            Obtain an interator for a dictionary.  The iterator should allow all
+            data items stored in a dictionary to be accessed.  Implementations may, or may not,
+            provide a specific ordering by key values.  The iterator's <CODE>Get</CODE>
+            method should return an <CODE>IPair</CODE> object allowing access to both the
+            key and the associated value.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An iterator for a dictionary is returned.</para>
+            </summary>
+            <returns>An iterator for a dictionary.</returns>
+        </member>
+        <member name="T:cs2.DictionaryPair`2">
+            <summary>
+            Simple class implementing the <CODE>IPair</CODE> interface for use in dictionary and hash table
+            data structures.  This class allows access to a key and an associated value, but only
+            the associated value may be modified.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+            <typeparam name="K">Type of the keys</typeparam>
+            <typeparam name="V">Type of the associated values</typeparam>
+        </member>
+        <member name="F:cs2.DictionaryPair`2.key">
+            <summary>The key value.</summary>
+        </member>
+        <member name="F:cs2.DictionaryPair`2.value">
+            <summary>The data value associated with the key.</summary>
+        </member>
+        <member name="M:cs2.DictionaryPair`2.#ctor(`0,`1)">
+            <summary>
+            Create a pair, initialising both the key and associated value.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The key and value are initialised.</para>
+            </summary>
+            <param name="aKey">The key.</param>
+            <param name="aValue">The value initially associated with this key.</param>
+        </member>
+        <member name="M:cs2.DictionaryPair`2.#ctor(`0)">
+            <summary>
+            Create a pair, initialising only the key.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The key is initialised (the associated value is <CODE>null</CODE>).</para>
+            </summary>
+            <param name="aKey">The key.</param>
+        </member>
+        <member name="M:cs2.DictionaryPair`2.GetKey">
+            <summary>
+            Return the key.
+            </summary>
+            <returns>The key value contained in this pair.</returns>
+        </member>
+        <member name="M:cs2.DictionaryPair`2.GetValue">
+            <summary>
+            Return the value.
+            </summary>
+            <returns>The associated value contained in this pair.</returns>
+        </member>
+        <member name="M:cs2.DictionaryPair`2.SetValue(`1)">
+            <summary>
+            Replace the value associated with this key.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The value associated with this key is changed to that specified.</para>
+            </summary>
+            <param name="value">The new value to be associated with this key.</param>
+        </member>
+        <member name="M:cs2.DictionaryPair`2.GetHashCode">
+            <summary>
+            Return a hash code for this pair.  This simply utilises the standard C#
+            <CODE>GetHashCode</CODE> method for the <EM>key</EM>.
+            </summary>
+            <returns>The hash code of the key.</returns>
+        </member>
+        <member name="M:cs2.DictionaryPair`2.Equals(System.Object)">
+            <summary>
+            Test keys for equality.  If the parameter is an object implementing the <CODE>IPair</CODE>
+            interface then the keys are compared for equality.  Otherwise the key contained in
+            this pair is compared directly with the parameter.
+            </summary>
+            <param name="o"><code>IPair</code> or key to compare this pair with</param>
+            <returns><CODE>true</CODE> if the keys are equal, <CODE>false</CODE> otherwise.</returns>
+        </member>
+        <member name="T:cs2.EmptyException">
+            <summary>
+            Exception thrown by ADTs when an attempt is made to access data
+            while the data structure is empty.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="M:cs2.EmptyException.#ctor">
+            <summary>Default constructor.  Error message is "empty data structure".</summary>
+        </member>
+        <member name="M:cs2.EmptyException.#ctor(System.String)">
+            <param name="mesg">error message</param>
+        </member>
+        <member name="T:cs2.ExternalHashTable`2">
+            <summary>
+            This class implements a simple, external hashtable dictionary using a
+            linked list for the buckets.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+            <typeparam name="K">Type of the keys</typeparam>
+            <typeparam name="V">Type of the associated values</typeparam>
+        </member>
+        <member name="F:cs2.ExternalHashTable`2.DEF_SIZE">
+            <summary>Default table size.</summary>
+        </member>
+        <member name="F:cs2.ExternalHashTable`2.table">
+            <summary>The array used for the hash table.</summary>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.hash(`0)">
+            <summary>
+            Function used to generate a suitable hash value for a specified key.  This method
+            uses the standard C# <CODE>GetHashCode</CODE> method, and ensures that the result is
+            positive and the correct range of values to be used as a subscript for
+            <CODE>table</CODE>.
+            </summary>
+            <param name="aKey">The key to be hashed.</param>
+            <returns>The hash value, <I>h</I> (0 &lt;= <I>h</I> &lt; <CODE>table.length</CODE>).</returns>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.#ctor(System.Int32)">
+            <summary>
+            Create a new hash table, with a given number of "buckets".
+            <para><I>Precondition:</I> <CODE>initSize > 0</CODE>.</para>
+            <para><I>Postcondition:</I> The array used by the hash table is initialised and is empty.</para>
+            </summary>
+            <param name="initSize">The number of "buckets" to be used by the hash table.</param>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.#ctor">
+            <summary>
+            Create a new hash table, with a default number of "buckets" (currently 101).
+            <para><I>Postcondition:</I> The array used by the hash table is initialised and is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.MakeEmpty">
+            <summary>
+            Delete all entries in the hash table.
+            <para><I>Postcondition:</I> The array used by the hash table is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.Insert(`0,`1)">
+            <summary>
+            Insert a new item or update an existing one in the hash table.  There is a
+            requirement that the keys are unique.  If the key is found in the table, then
+            the associated value is replaced with that specified here.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The item is added or updated.</para>
+            </summary>
+            <param name="aKey">The key for the item to be added to the hash table.</param>
+            <param name="aValue">The value associated with the key.</param>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.Insert(`0)">
+            <summary>
+            Insert a new key into the hash table.  There is a requirement that the keys
+            are unique.  If the key is found in the table, then nothing is changed.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The key is added if not present previously.</para>
+            </summary>
+            <param name="aKey">The key to be added to the hash table.</param>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.Remove(`0)">
+            <summary>
+            Remove an entry from the hash table.  If
+            the key is not found in the table, then nothing is done.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The key and associated value have been removed
+               from the table, if present previously.</para>
+            </summary>
+            <param name="aKey">The key to be removed from the hash table.</param>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.Get(`0)">
+            <summary>
+            Access an entry in the hash table, creating it if necessary.  Note that this method
+            adds the specified key if it is not already present.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The value associated with the specified key is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns>The value associated with the specified key is returned (<CODE>null</CODE>
+            if the key was not previously present).</returns>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.Contains(`0)">
+            <summary>
+            Tell whether the hash table contains a specified key.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the key is present in the hash table
+            is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns><CODE>true</CODE> if the specified key is found in the hash table,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.IsEmpty">
+            <summary>
+            Tell whether the hash table is empty.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the hash table is empty
+            is returned.</para>
+            </summary>
+            <returns><CODE>true</CODE> if the hash table is empty,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.ExternalHashTable`2.GetIterator">
+            <summary>
+            Obtain an interator for this hash table.  The iterator allows all
+            data stored in the hash table to be accessed.  The order of the items is
+            determined by the hash codes of the key values and is unlikely to make any sense
+            to a human.
+            <para><B>Note:</B>The iterator's <CODE>Get</CODE>
+            method returns an <CODE>IPair</CODE> object allowing access to both the
+            key and the associated value.</para>
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An iterator for the hash table is returned.</para>
+            </summary>
+            <returns>An iterator for the hash table.</returns>
+        </member>
+        <member name="T:cs2.GenericList`1">
+            <summary>
+            Simple class to handle generic lists, using linked lists.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.GenericList`1.first">
+            <summary>Reference to the first ListNode in a GenericList.</summary>
+        </member>
+        <member name="F:cs2.GenericList`1.numElements">
+            <summary>Number of elements in a GenericList.</summary>
+        </member>
+        <member name="M:cs2.GenericList`1.#ctor">
+            <summary>
+            Create an empty GenericList.
+            <para><I>Postcondition:</I> The list is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.GenericList`1.Add(`0,System.Int32)">
+            <summary>
+            Place a new item at a specified position in a GenericList.
+            <para><I>Precondition:</I> The position is positive or zero.</para>
+            <para><I>Postcondition:</I> The object <c>item</c> appears at
+            <c>position</c> in the list or at the end of the list if
+            <c>position</c> is greater than the original length of the list.</para>
+            </summary>
+            <param name="item">The object to be added to the list.</param>
+            <param name="position">The position in the list where the item should
+            be added.</param>
+            <exception cref="T:System.ArgumentException">if <c>position</c> is negative.</exception>
+        </member>
+        <member name="M:cs2.GenericList`1.Add(`0)">
+            <summary>Place a new item at the end of a GenericList.
+            <para><I>Postcondition:</I> The object <c>item</c> appears at
+            the end of the list.</para>
+            </summary>
+            <param name="item">The object to be added to the list.</param>
+        </member>
+        <member name="M:cs2.GenericList`1.Remove(System.Int32)">
+            <summary>
+            Remove the item at a given position in a GenericList.
+            <para><I>Precondition:</I> The position is that of a valid item.</para>
+            <para><I>Postcondition:</I> The item at <c>position</c> has been
+             removed from the list.</para>
+            </summary>
+            <param name="position">The position of the item to be removed from the
+            list.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <c>position</c> is invalid.</exception>
+        </member>
+        <member name="M:cs2.GenericList`1.Length">
+            <summary>
+            Return the current number of elements in a GenericList.
+            </summary>
+            <returns>The number of elements in the list.</returns>
+        </member>
+        <member name="M:cs2.GenericList`1.Get(System.Int32)">
+            <summary>
+            Retrieve an element from an GenericList.
+            <para><I>Precondition:</I> <c>index</c> is in range.</para>
+            </summary>
+            <param name="index">The position of the item to get from the list.</param>
+            <returns>The element at position <c>index</c> in the list.</returns>
+            <exception cref="T:System.IndexOutOfRangeException">if <c>index</c> is invalid.</exception>
+        </member>
+        <member name="M:cs2.GenericList`1.Set(System.Int32,`0)">
+            <summary>
+            Change the value of an element in an GenericList.
+            <para><I>Precondition:</I> <C>index</C> is in range.</para>
+            </summary>
+            <param name="index">The position of the item to be changed in the list.</param>
+            <param name="item">The new value for the item.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <c>index</c> is invalid.</exception>
+        </member>
+        <member name="M:cs2.GenericList`1.Position(`0)">
+            <summary>
+              Find item in a GenericList (uses the <c>.equals()</c> method for
+              comparisons).
+            </summary>
+            <param name="item">The item to be searched for.</param>
+            <returns>The position of this item if it is found, otherwise -1.</returns>
+        </member>
+        <member name="M:cs2.GenericList`1.ToString">
+            <summary>
+            Return string representation of the GenericList.
+            <para>The format is: <c>[ <I>item</I>, <I>item</I>, ... ]</c></para>
+            </summary>
+            <returns>A string representing the contents of this list.</returns>
+        </member>
+        <member name="T:cs2.IntegerList">
+            <summary>
+            Simple class to handle lists of integers, using linked lists.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.IntegerList.first">
+            <summary>Reference to the first ListNode in a IntegerList.</summary>
+        </member>
+        <member name="F:cs2.IntegerList.numElements">
+            <summary>Number of elements in a IntegerList.</summary>
+        </member>
+        <member name="M:cs2.IntegerList.#ctor">
+            <summary>
+            Create an empty IntegerList.
+            <para><I>Postcondition:</I> The list is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.IntegerList.Add(System.Int32,System.Int32)">
+            <summary>
+            Place a new item at a specified position in an IntegerList.
+            <para><I>Precondition:</I> The specified position is positive or zero.</para>
+            <para><I>Postcondition:</I> The value <CODE>item</CODE> appears at
+            <CODE>position</CODE> in the list, or at the end of the list if
+            <CODE>position</CODE> is greater than the original length of the list.</para>
+            </summary>
+            <param name="item">The integer value to be added to the list.</param>
+            <param name="position">The position in the list where the item should
+            be added.</param>
+            <exception cref="T:System.ArgumentException">if <CODE>position</CODE> is negative.</exception>
+        </member>
+        <member name="M:cs2.IntegerList.Add(System.Int32)">
+            <summary>
+            Place a new item at the end of an IntegerList.
+            <para><I>Postcondition:</I> The value <CODE>item</CODE> appears at
+            the end of the list.</para>
+            </summary>
+            <param name="item">The integer value to be added to the list.</param>
+        </member>
+        <member name="M:cs2.IntegerList.Remove(System.Int32)">
+            <summary>
+            Remove the item at a given position in an IntegerList.
+            <para><I>Precondition:</I> The position is that of a valid item.</para>
+            <para><I>Postcondition:</I> The item at <CODE>position</CODE> has been
+             removed from the list.</para>
+            </summary>
+            <param name="position">The position of the item to be removed from the
+            list.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>position</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.IntegerList.Length">
+            <summary>
+            Return the current number of elements in an IntegerList.
+            </summary>
+            <returns>The number of elements in the list.</returns>
+        </member>
+        <member name="M:cs2.IntegerList.Get(System.Int32)">
+            <summary>
+            Retrieve an element from an IntegerList.
+            <para><I>Precondition:</I> <CODE>index</CODE> is in range.</para>
+            </summary>
+            <param name="index">The position of the item to get from the list.</param>
+            <returns>The element at position <CODE>index</CODE> in the list.</returns>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>index</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.IntegerList.Set(System.Int32,System.Int32)">
+            <summary>
+            Change the value of an element in an IntegerList.
+            <para><I>Precondition:</I> <CODE>index</CODE> is in range.</para>
+            </summary>
+            <param name="index">The position of the item to be changed in the list.</param>
+            <param name="item">item The new value for the item.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>index</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.IntegerList.Position(System.Int32)">
+            <summary>
+            Find item in an IntegerList.
+            </summary>
+            <param name="item">The item to be searched for.</param>
+            <returns>The position of this item if it is found, otherwise -1</returns>
+        </member>
+        <member name="M:cs2.IntegerList.ToString">
+            <summary>
+            Return string representation of the IntegerList.
+            The format is: <CODE>[ <I>item</I>, <I>item</I>, ... ]</CODE>
+            </summary>
+            <returns>A string representing the contents of this list</returns>
+        </member>
+        <member name="T:cs2.IntegerVector">
+            <summary>
+            Simple class to handle vectors of integers.
+            These are simple lists of integers, based on a fixed-size array.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.IntegerVector.data">
+            <summary>The array of data.</summary>
+        </member>
+        <member name="F:cs2.IntegerVector.numElements">
+            <summary>Number of elements stored in the vector.</summary>
+        </member>
+        <member name="M:cs2.IntegerVector.#ctor(System.Int32)">
+            <summary>
+            Create a new vector.
+            <para><I>Precondition:</I> <CODE>initSize > 0</CODE>.</para>
+            </summary>
+            <param name="initSize">The maximum capacity of the vector.</param>
+            <exception cref="T:System.ArgumentException">if <CODE>initSize</CODE> is negative or zero.</exception>
+        </member>
+        <member name="M:cs2.IntegerVector.#ctor">
+            <summary>
+            Create a new vector with a default maximum capacity of 100.
+            </summary>
+        </member>
+        <member name="M:cs2.IntegerVector.Add(System.Int32,System.Int32)">
+            <summary>
+            Place a new item at a specified position in an IntegerVector.
+            <para><I>Precondition:</I> There is space available for another value.</para>
+            <para><I>Precondition:</I> The position is in range.</para>
+            <para><I>Postcondition:</I> The value <CODE>item</CODE> appears at
+            <CODE>position</CODE> in the vector, or at the end of the list if
+            <CODE>position</CODE> is greater than the original length of the list.</para>
+            </summary>
+            <param name="item">The integer value to be added to the vector.</param>
+            <param name="position">The position in the vector where the item should
+            be added.</param>
+            <exception cref="T:System.ArgumentException">if <CODE>position</CODE> is negative.</exception>
+            <exception cref="T:cs2.NoSpaceAvailableException">if no space is available.</exception>
+        </member>
+        <member name="M:cs2.IntegerVector.Add(System.Int32)">
+            <summary>
+            Place a new item at the end of an IntegerVector.
+            <para><I>Precondition:</I> There is space available for another value.</para>
+            <para><I>Postcondition:</I> The value <CODE>item</CODE> appears at
+            the end of the vector.</para>
+            </summary>
+            <param name="item">The integer value to be added to the vector.</param>
+        </member>
+        <member name="M:cs2.IntegerVector.Remove(System.Int32)">
+            <summary>
+            Remove the item at a given position in an IntegerVector.
+            <para><I>Precondition:</I> The position is that of a valid item.</para>
+            <para><I>Postcondition:</I> The item at <CODE>position</CODE> has been
+            removed from the vector.</para>
+            </summary>
+            <param name="position">The position of the item to be removed from the
+            vector.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>position</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.IntegerVector.Length">
+            <summary>
+            Return the current number of elements in an IntegerVector.
+            </summary>
+            <returns>The number of elements in the vector.</returns>
+        </member>
+        <member name="M:cs2.IntegerVector.Get(System.Int32)">
+            <summary>
+            Retrieve an element from an IntegerVector.
+            <para><I>Precondition:</I> <CODE>index</CODE> is in range.</para>
+            </summary>
+            <param name="index">The position of the item to get from the list.</param>
+            <returns>The element at position <CODE>index</CODE> in the vector.</returns>
+            <exception cref="T:System.IndexOutOfRangeException">If <CODE>index</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.IntegerVector.Set(System.Int32,System.Int32)">
+            <summary>Change the value of an element in an IntegerVector.
+            <para><I>Precondition:</I> <CODE>index</CODE> is in range.</para>
+            <para><I>Postcondition:</I> The value of the element at position <CODE>index</CODE>
+              in the vector has been changed.</para>
+            </summary>
+            <param name="index">The position of the item to be changed in the vector.</param>
+            <param name="item">The new value for the item.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>index</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.IntegerVector.Position(System.Int32)">
+            <summary>
+            Search for a specified item in an IntegerVector.
+            </summary>
+            <param name="item">The item to be searched for.</param>
+            <returns>The position of this item if it is found, otherwise -1</returns>
+        </member>
+        <member name="M:cs2.IntegerVector.ToString">
+            <summary>
+            Return a string representation of the IntegerVector.
+            The format is: <CODE>[ <I>item</I>, <I>item</I>, ... ]</CODE>
+            </summary>
+            <returns>A string representing the contents of this vector</returns>
+        </member>
+        <member name="T:cs2.InternalHashTable`2">
+            <summary>
+            This class implements a simple, internal hashtable dictionary.
+            Overflow is handled by always keeping one empty slot in the table.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+            <typeparam name="K">Type of the keys</typeparam>
+            <typeparam name="V">Type of the associated values</typeparam>
+        </member>
+        <member name="F:cs2.InternalHashTable`2.DEF_SIZE">
+            <summary>Default table size.</summary>
+        </member>
+        <member name="F:cs2.InternalHashTable`2.table">
+            <summary>The array used for the hash table.</summary>
+        </member>
+        <member name="F:cs2.InternalHashTable`2.numEntries">
+            <summary>
+            The number of occupied and deleted entries in the table.
+            Restricted to <CODE>table.length-1</CODE>.
+            </summary>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.hash(`0)">
+            <summary>
+            Function used to generate a suitable hash value for a specified key.  This method
+            uses the standard C# <CODE>GetHashCode</CODE> method, and ensures that the result is
+            positive and the correct range of values to be used as a subscript for
+            <CODE>table</CODE>.
+            </summary>
+            <param name="aKey">The key to be hashed.</param>
+            <returns>The hash value, <I>h</I> (0 &lt;= <I>h</I> &lt; <CODE>table.length</CODE>).</returns>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.#ctor(System.Int32)">
+            <summary>
+            Create a new hash table, with a given capacity.
+            <para><I>Precondition:</I> <CODE>initSize > 0</CODE>.</para>
+            <para><I>Postcondition:</I> The array used by the hash table is initialised and is empty.</para>
+            </summary>
+            <param name="initSize">The maximum capacity of the hash table.</param>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.#ctor">
+            <summary>
+            Create a new hash table, with a default capacity (currently 101 items).
+            <para><I>Postcondition:</I> The array used by the hash table is initialised and is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.MakeEmpty">
+            <summary>
+            Delete all entries in the hash table.
+            <para><I>Postcondition:</I> The array used by the hash table is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.Insert(`0,`1)">
+            <summary>
+            Insert a new item or update an existing one in the hash table.
+            There is a requirement that the keys are unique.  If
+            the key is found in the table, then the associated value is
+            replaced with that specified here.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The item is added or updated.</para>
+            </summary>
+            <param name="aKey">The key for the item to be added to the hash table.</param>
+            <param name="aValue">The value associated with the key.</param>
+            <exception cref="T:cs2.NoSpaceAvailableException">if the hash table's capacity is exceeded.</exception>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.Insert(`0)">
+            <summary>
+            Insert a new key into the hash table.  There is a requirement that the keys are unique.
+            If the key is found in the table, then nothing is changed.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The key is added if not present previously.</para>
+            </summary>
+            <param name="aKey">The key to be added to the hash table.</param>
+            <exception cref="T:cs2.NoSpaceAvailableException">if the hash table's capacity is exceeded.</exception>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.Remove(`0)">
+            <summary>
+            Remove an entry from the hash table.  If
+            the key is not found in the table, then nothing is done.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The key and associated value have been removed
+              from the table, if present previously.</para>
+            </summary>
+            <param name="aKey">The key to be removed from the hash table.</param>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.Get(`0)">
+            <summary>
+            Access an entry in the hash table, creating it if necessary.  Note that this method
+            adds the specified key if it is not already present.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The value associated with the specified key is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns>The value associated with the specified key is returned (<CODE>null</CODE> if
+            the key was not previously present).</returns>
+            <exception cref="T:cs2.NoSpaceAvailableException">if the hash table's capacity is exceeded.</exception>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.Contains(`0)">
+            <summary>
+            Tell whether the hash table contains a specified key.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the key is present in the hash
+            table is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns><CODE>true</CODE> if the specified key is found in the hash table,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.IsEmpty">
+            <summary>
+            Tell whether the hash table is empty.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the hash table is empty
+            is returned.</para>
+            </summary>
+            <returns><CODE>true</CODE> if the hash table is empty,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.InternalHashTable`2.GetIterator">
+            <summary>
+            Obtain an interator for this hash table.  The iterator allows all
+            data stored in the hash table to be accessed.  The order of the items is
+            determined by the hash codes of the key values and is unlikely to make any sense
+            to a human.
+            <para><B>Note:</B>The iterator's <CODE>Get</CODE>
+            method returns an <CODE>IPair</CODE> object allowing access to both the
+            key and the associated value.</para>
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An iterator for the hash table is returned.</para>
+            </summary>
+            <returns>An iterator for the hash table.</returns>
+        </member>
+        <member name="T:cs2.IIterator`1">
+            <summary>
+            Interface describing iterators for the CS2 data structures.
+            These are only simple one-directional, read-only iterators at this stage.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="M:cs2.IIterator`1.Get">
+            <summary>
+            Get the current item.
+            </summary>
+            <returns>A reference to the current data item.</returns>
+            <exception cref="T:System.Exception">May throw run-time exceptions if the iterator is in
+            an invalid state.</exception>
+        </member>
+        <member name="M:cs2.IIterator`1.Next">
+            <summary>
+            Move to the next item.
+            </summary>
+            <exception cref="T:System.Exception">May throw run-time exceptions if the iterator is in
+            an invalid state.</exception>
+        </member>
+        <member name="M:cs2.IIterator`1.AtEnd">
+            <summary>
+            Tell whether there are any more items.
+            </summary>
+            <returns><code>true</code> when the iterator is finished.</returns>
+        </member>
+        <member name="T:cs2.ListDictionary`2">
+            <summary>
+            Implementation of a simple dictionary ADT.  Requires that the keys implement the
+            <CODE>IComparable</CODE> interface.
+            The keys must be unique.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 October 2013)
+            </remarks>
+            <typeparam name="K">Type of the keys (must be IComparable here)</typeparam>
+            <typeparam name="V">Type of the associated values</typeparam>
+        </member>
+        <member name="F:cs2.ListDictionary`2.dict">
+            <summary>Reference to the linked list containing the data.</summary>
+        </member>
+        <member name="M:cs2.ListDictionary`2.findNode(`0)">
+            <summary>
+            Find the node in the linked list containing the specified key.  If the key
+            is not found then it is inserted.
+            <para><I>Postcondition:</I> The dictionary is not empty.</para>
+            </summary>
+            <param name="aKey">The key to be located or inserted.</param>
+            <returns>A reference to the node containing the specified key.</returns>
+        </member>
+        <member name="M:cs2.ListDictionary`2.#ctor">
+            <summary>
+            Create an empty ListDictionary.
+            <para><I>Postcondition:</I> The dictionary is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.ListDictionary`2.MakeEmpty">
+            <summary>
+            Delete all the entries in the dictionary.
+            <para><I>Postcondition:</I> The dictionary is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.ListDictionary`2.Insert(`0,`1)">
+            <summary>
+            Insert a new item into the dictionary or update an existing one.  If the specified key is already
+            present then the existing value is replaced by that specified here.
+            <para><I>Postcondition:</I> The dictionary is not empty.</para>
+            </summary>
+            <param name="aKey">The key to be added.</param>
+            <param name="aValue">The associated value to be stored with the key.</param>
+        </member>
+        <member name="M:cs2.ListDictionary`2.Insert(cs2.IPair{`0,`1})">
+            <summary>
+            Insert a new item into the dictionary or update an existing one.  If the specified key is already
+            present then the existing value is replaced by that specified here.
+            <para><I>Postcondition:</I> The dictionary is not empty.</para>
+            </summary>
+            <param name="p">The key/value pair to be added/updated.</param>
+        </member>
+        <member name="M:cs2.ListDictionary`2.Insert(`0)">
+            <summary>
+            Add a key to the dictionary without an associated value.  If the specified key is already
+            present then nothing is changed.
+            <para><I>Postcondition:</I> The dictionary is not empty.</para>
+            </summary>
+            <param name="aKey">The key to be added.</param>
+        </member>
+        <member name="M:cs2.ListDictionary`2.Remove(`0)">
+            <summary>
+            Remove an item from the dictionary.  If the specified key is not found, no action
+            is taken.
+            <para><I>Postcondition:</I> The item specified by the given key is not present.</para>
+            </summary>
+            <param name="aKey">The key of the entry to be removed.</param>
+        </member>
+        <member name="M:cs2.ListDictionary`2.Get(`0)">
+            <summary>
+            Access an entry in the dictionary.  Note that this method
+            adds the specified key if it is not already present.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The value associated with the specified key is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns>The value associated with the specified key is returned (<CODE>null</CODE> if the
+            key was not previously present).</returns>
+        </member>
+        <member name="M:cs2.ListDictionary`2.Contains(`0)">
+            <summary>
+            Tell whether the dictionary contains a specified key.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the key is present in the dictionary
+            is returned.</para>
+            </summary>
+            <param name="aKey">The key of the item to be accessed.</param>
+            <returns><CODE>true</CODE> if the specified key is found in the dictionary,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.ListDictionary`2.IsEmpty">
+            <summary>
+            Tell whether the dictionary is empty.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An indication of whether the dictionary is empty
+            is returned.</para>
+            </summary>
+            <returns><CODE>true</CODE> if the dictionary is empty,
+            otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="M:cs2.ListDictionary`2.GetIterator">
+            <summary>
+            Obtain an interator for the dictionary.  The iterator allows all
+            data items stored in the dictionary to be accessed.  The iterator provided by
+            this method orders the items into ascending order of the keys.
+            The iterator's <CODE>Get</CODE>
+            method returns an <CODE>IPair</CODE> object allowing access to both the
+            key and the associated value.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> An iterator for the dictionary is returned.</para>
+            </summary>
+            <returns>An iterator for the dictionary.</returns>
+        </member>
+        <member name="T:cs2.ListQueue`1">
+            <summary>
+            Simple generic queue class, using linked lists.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.ListQueue`1.hd">
+            <summary>Reference to the head (front) of the queue.</summary>
+        </member>
+        <member name="F:cs2.ListQueue`1.tl">
+            <summary>Reference to the tail (back) of the queue.</summary>
+        </member>
+        <member name="M:cs2.ListQueue`1.#ctor">
+            <summary>
+            Create an empty queue.
+            <para><I>Postcondition:</I> The queue is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.ListQueue`1.Add(`0)">
+            <summary>
+            Add an item to the tail of a queue.
+            <para><I>Postcondition:</I> The queue is not empty.</para>
+            </summary>
+            <param name="item">The item to be added to the queue.</param>
+        </member>
+        <member name="M:cs2.ListQueue`1.Remove">
+            <summary>
+            Remove an item from the head of a queue.
+            <para><I>Precondition:</I> The queue is not empty.</para>
+            <para><I>Postcondition:</I> The item at the head of the queue is removed and returned.</para>
+            </summary>
+            <returns>The item from the head of the queue.</returns>
+            <exception cref="T:cs2.EmptyException">if the queue is empty.</exception>
+        </member>
+        <member name="M:cs2.ListQueue`1.Head">
+            <summary>
+            Return a copy of the item at the head of a queue.
+            <para><I>Precondition:</I> The queue is not empty.</para>
+            </summary>
+            <returns>The value of the item at the head of the queue.</returns>
+            <exception cref="T:cs2.EmptyException">if the queue is empty.</exception>
+        </member>
+        <member name="M:cs2.ListQueue`1.IsEmpty">
+            <summary>
+            Tell if a queue contains any items.
+            </summary>
+            <returns><CODE>true</CODE> if there are no items in the queue, otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="T:cs2.ListStack`1">
+            <summary>
+            Simple generic stack class using a linked list.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.ListStack`1.topNode">
+            <summary>Reference to the first StackNode in a ListStack.</summary>
+        </member>
+        <member name="M:cs2.ListStack`1.#ctor">
+            <summary>
+            Create an empty ListStack.
+            <para><I>Postcondition:</I> The stack is initialised and is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.ListStack`1.Push(`0)">
+            <summary>
+            Push a new item onto a ListStack.
+            <para><I>Postcondition:</I> The stack is not empty.</para>
+            </summary>
+            <param name="item">The item to be pushed onto the stack.</param>
+        </member>
+        <member name="M:cs2.ListStack`1.Pop">
+            <summary>
+            Pop an item off the top of the stack.
+            <para><I>Precondition:</I> The stack is not empty.</para>
+            <para><I>Postcondition:</I> The item on the top of the stack is removed and returned.</para>
+            </summary>
+            <returns>The item from the top of the stack.</returns>
+            <exception cref="T:cs2.EmptyException">if the stack is empty.</exception>
+        </member>
+        <member name="M:cs2.ListStack`1.Top">
+            <summary>
+            Return a copy of the item on the top of the stack.
+            <para><I>Precondition:</I> The stack is not empty.</para>
+            <para><I>Postcondition:</I> The item on the top of the stack is returned.</para>
+            </summary>
+            <returns>The value of the item on the top of the stack.</returns>
+            <exception cref="T:cs2.EmptyException">if the stack is empty.</exception>
+        </member>
+        <member name="M:cs2.ListStack`1.IsEmpty">
+            <summary>
+            Tell if the stack contains any items.
+            </summary>
+            <returns><CODE>true</CODE> if there are no items on the stack, otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="T:cs2.NoSpaceAvailableException">
+            <summary>
+            Exception thrown by array-based ADTs when full.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="M:cs2.NoSpaceAvailableException.#ctor">
+            <summary>Default constuctor.  Error message is "no space available in array".</summary>
+        </member>
+        <member name="M:cs2.NoSpaceAvailableException.#ctor(System.String)">
+            <param name="mesg">error message</param>
+        </member>
+        <member name="T:cs2.ObjectList">
+            <summary>
+            Simple class to handle generic lists of objects, using linked lists.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.ObjectList.first">
+            <summary>Reference to the first ListNode in a ObjectList.</summary>
+        </member>
+        <member name="F:cs2.ObjectList.numElements">
+            <summary>Number of elements in a ObjectList.</summary>
+        </member>
+        <member name="M:cs2.ObjectList.#ctor">
+            <summary>
+            Create an empty ObjectList.
+            <para><I>Postcondition:</I> The list is empty.</para>
+            </summary>
+        </member>
+        <member name="M:cs2.ObjectList.Add(System.Object,System.Int32)">
+            <summary>Place a new item at a specified position in a ObjectList.
+            <para><I>Precondition:</I> The position is positive or zero.</para>
+            <para><I>Postcondition:</I> The object <CODE>item</CODE> appears at
+            <CODE>position</CODE> in the list or at the end of the list if
+            <CODE>position</CODE> is greater than the original length of the list.</para>
+            </summary>
+            <param name="item">The object to be added to the list.</param>
+            <param name="position">The position in the list where the item should
+            be added.</param>
+            <exception cref="T:System.ArgumentException">if <CODE>position</CODE> is negative.</exception>
+        </member>
+        <member name="M:cs2.ObjectList.Add(System.Object)">
+            <summary>Place a new item at the end of a ObjectList.
+            <para><I>Postcondition:</I> The object <CODE>item</CODE> appears at
+            the end of the list.</para>
+            </summary>
+            <param name="item">The object to be added to the list.</param>
+        </member>
+        <member name="M:cs2.ObjectList.Remove(System.Int32)">
+            <summary>
+            Remove the item at a given position in a ObjectList.
+            <para><I>Precondition:</I> The position is that of a valid item.</para>
+            <para><I>Postcondition:</I> The item at <CODE>position</CODE> has been
+             removed from the list.</para>
+            </summary>
+            <param name="position">The position of the item to be removed from the
+            list.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>position</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.ObjectList.Length">
+            <summary>
+            Return the current number of elements in a ObjectList.
+            </summary>
+            <returns>The number of elements in the list.</returns>
+        </member>
+        <member name="M:cs2.ObjectList.Get(System.Int32)">
+            <summary>
+            Retrieve an element from an ObjectList.
+            <para><I>Precondition:</I> <CODE>index</CODE> is in range.</para>
+            </summary>
+            <param name="index">The position of the item to get from the list.</param>
+            <returns>The element at position <CODE>index</CODE> in the list.</returns>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>index</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.ObjectList.Set(System.Int32,System.Object)">
+            <summary>
+            Change the value of an element in an ObjectList.
+            <para><I>Precondition:</I> <CODE>index</CODE> is in range.</para>
+            </summary>
+            <param name="index">The position of the item to be changed in the list.</param>
+            <param name="item">The new value for the item.</param>
+            <exception cref="T:System.IndexOutOfRangeException">if <CODE>index</CODE> is invalid.</exception>
+        </member>
+        <member name="M:cs2.ObjectList.Position(System.Object)">
+            <summary>
+            Find item in a ObjectList (uses the <CODE>.Equals()</CODE> method for
+            comparisons).
+            </summary>
+            <param name="item">The item to be searched for.</param>
+            <returns>The position of this item if it is found, otherwise -1.</returns>
+        </member>
+        <member name="M:cs2.ObjectList.ToString">
+            <summary>
+            Return string representation of the ObjectList.
+            The format is: <CODE>[ <I>item</I>, <I>item</I>, ... ]</CODE>
+            </summary>
+            <returns>A string representing the contents of this list.</returns>
+        </member>
+        <member name="T:cs2.IPair`2">
+            <summary>
+            Interface describing a (key, value) pair (as used in dictionary and hash table
+            data structures).
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 October 2013)
+            </remarks>
+            <typeparam name="K">Type of the keys</typeparam>
+            <typeparam name="V">Type of the associated values</typeparam>
+        </member>
+        <member name="M:cs2.IPair`2.GetKey">
+            <summary>Access the key.</summary>
+            <returns>The key value contained in a pair.</returns>
+        </member>
+        <member name="M:cs2.IPair`2.GetValue">
+            <summary>Access the value.</summary>
+            <returns>The associated value contained in a pair.</returns>
+        </member>
+        <member name="M:cs2.IPair`2.SetValue(`1)">
+            <summary>
+            Replace the value associated with a key.
+            <para><I>Precondition:</I> None.</para>
+            <para><I>Postcondition:</I> The value associated with a key is changed to that specified.</para>
+            </summary>
+            <param name="value">The new value to be associated with a key.</param>
+        </member>
+        <member name="M:cs2.IPair`2.GetHashCode">
+            <summary>
+            Return a hash code for the key in a pair.  This may utilise the standard C#
+            <CODE>GetHashCode</CODE> method.
+            </summary>
+            <returns>The hash code of the key.</returns>
+        </member>
+        <member name="M:cs2.IPair`2.Equals(System.Object)">
+            <summary>
+            Test keys for equality.  If the parameter is an object implementing the <CODE>IPair</CODE>
+            interface then the keys should be compared for equality.  Otherwise the key contained in
+            this pair should be compared directly with the parameter.
+            </summary>
+            <param name="o"><code>IPair</code> or key to compare this pair with</param>
+            <returns><CODE>true</CODE> if the keys are equal, <CODE>false</CODE> otherwise.</returns>
+        </member>
+        <member name="T:cs2.IQueue`1">
+            <summary>
+            Interface describing features common to all queues.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="M:cs2.IQueue`1.Add(`0)">
+            <summary>
+            Add an item to the tail of a queue.
+            <para><I>Postcondition:</I> The queue is not empty.</para>
+            </summary>
+            <param name="item">The item to be added to the queue.</param>
+        </member>
+        <member name="M:cs2.IQueue`1.Remove">
+            <summary>
+            Remove an item from the head of a queue.
+            <para><I>Precondition:</I> The queue is not empty.</para>
+            </summary>
+            <returns>The item from the front of the queue.</returns>
+        </member>
+        <member name="M:cs2.IQueue`1.Head">
+            <summary>
+            Return a copy of the item at the head of a queue.
+            <para><I>Precondition:</I> The queue is not empty.</para>
+            </summary>
+            <returns>The value of the item at the front of the queue.</returns>
+        </member>
+        <member name="M:cs2.IQueue`1.IsEmpty">
+            <summary>
+            Tell if a queue contains any items.
+            </summary>
+            <returns><CODE>true</CODE> if there are no items in the queue, otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="T:cs2.Sort">
+            <summary>
+            This class contains a number of generic sorting algorithms:
+            BubbleSort, InsertionSort, SelectionSort,
+            QuickSort and MergeSort.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 October 2013)
+            </remarks>
+        </member>
+        <member name="M:cs2.Sort.BubbleSort``1(``0[])">
+            <summary>
+            Sort a list of items into ascending order using the Bubble Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list is in ascending order.</para>
+            <para>This sort is of order <I>n</I><SUP>2</SUP>.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+        </member>
+        <member name="M:cs2.Sort.InsertionSort``1(``0[])">
+            <summary>
+            Sort a list of items into ascending order using the Insertion Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list is in ascending order.</para>
+            <para>This sort is of order <I>n</I><SUP>2</SUP>.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+        </member>
+        <member name="M:cs2.Sort.SelectionSort``1(``0[])">
+            <summary>
+            Sort a list of items into ascending order using the Selection Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list is in ascending order.</para>
+            <para>This sort is of order <I>n</I><SUP>2</SUP>, but does only <I>n</I>
+               movements of the data.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+        </member>
+        <member name="M:cs2.Sort.partition``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Partition a list between given start and end points, returning the partition
+            point.   The value at <CODE>list[start]</CODE> is used as the partition
+            element.  This method is used by the Quick Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The items in the list before the partition point are
+               less than or equal to the partition element, and the items in the list after
+               the partition point are greater than the partition element.</para>
+            </summary>
+            @param list The list of items to be partitioned.
+            @param start The index of the first item in the list to be considered.
+            @param end The index of the last item in the list to be considered.
+            @return The index of the partition point.
+        </member>
+        <member name="M:cs2.Sort.recursiveQS``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Sort a list of items into ascending order using a recursive form of the
+            Quick Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list between <CODE>start</CODE> and
+               <CODE>end</CODE> is in ascending order.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+            <param name="start">The index of the first item in the list to be considered.</param>
+            <param name="end">The index of the last item in the list to be considered.</param>
+        </member>
+        <member name="M:cs2.Sort.QuickSort``1(``0[])">
+            <summary>
+            Sort a list of items into ascending order using a recursive form of the
+            Quick Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list is in ascending order.</para>
+            <para>This sort is of order <I>n</I>log <I>n</I>.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+        </member>
+        <member name="M:cs2.Sort.IterativeQuickSort``1(``0[])">
+            <summary>
+            Sort a list of items into ascending order using an iterative form of the
+            Quick Sort.
+            This makes use of the <CODE>ListStack</CODE> class.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>IComparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list is in ascending order.</para>
+            <para>This sort is of order <I>n</I>log <I>n</I>.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+        </member>
+        <member name="M:cs2.Sort.merge``1(``0[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Merge two sorted sublists of items into a single sorted list.
+            <para><I>Precondition:</I> The sublist between <CODE>first</CODE> and
+               <CODE>mid</CODE> is in ascending order, and the sublist between 
+               <CODE>mid+1</CODE> and <CODE>last</CODE> is in ascending order.</para>
+            <para><I>Precondition:</I> Space is available to create an array of
+               <CODE>last-first+1</CODE> elements.</para>
+            <para><I>Postcondition:</I> The list between <CODE>first</CODE> and
+               <CODE>last</CODE> is in ascending order.</para>
+            </summary>
+            <param name="list">The list of items to be merged.</param>
+            <param name="first">The index of the first element of the first sublist to
+               be considered.</param>
+            <param name="mid">The index of the midpoint between the two sublists to be
+               considered.</param>
+            <param name="last">The index of the last element of the second sublist to be
+               considered.</param>
+        </member>
+        <member name="M:cs2.Sort.recursiveMS``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Sort a list of items into ascending order using a recursive form of the
+            Merge Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>Comparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list between <CODE>start</CODE> and
+               <CODE>end</CODE> is in ascending order.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+            <param name="start">The index of the first item in the list to be considered.</param>
+            <param name="end">The index of the last item in the list to be considered.</param>
+        </member>
+        <member name="M:cs2.Sort.MergeSort``1(``0[])">
+            <summary>
+            Sort a list of items into ascending order using a recursive form of the
+            Merge Sort.
+            <para><I>Precondition:</I> The list contains data that implements
+               the <CODE>Comparable</CODE> interface.</para>
+            <para><I>Postcondition:</I> The list is in ascending order.</para>
+            <para>This sort is of order <I>n</I>log <I>n</I>, but has 2<I>n</I> space
+               requirements.</para>
+            </summary>
+            <param name="list">The list of items to be sorted.</param>
+        </member>
+        <member name="T:cs2.IStack`1">
+            <summary>
+            Interface describing features common to all stacks.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (19 September 2013)
+            </remarks>
+        </member>
+        <member name="M:cs2.IStack`1.Push(`0)">
+            <summary>
+            Push a new item onto a stack.
+            <para><I>Postcondition:</I> The stack is not empty.</para>
+            </summary>
+            <param name="item">The item to be pushed onto the stack.</param>
+        </member>
+        <member name="M:cs2.IStack`1.Pop">
+            <summary>
+            Pop an item off the top of a stack.
+            <para><I>Precondition:</I> The stack is not empty.</para>
+            <para><I>Postcondition:</I> The item on the top of the stack is removed and returned.</para>
+            </summary>
+            <returns>The item from the top of the stack.</returns>
+        </member>
+        <member name="M:cs2.IStack`1.Top">
+            <summary>
+            Return a copy of the item on the top of a stack.
+            <para><I>Precondition:</I> The stack is not empty.</para>
+            <para><I>Postcondition:</I> The item on the top of the stack is returned.</para>
+            </summary>
+            <returns>The value of the item on the top of the stack.</returns>
+        </member>
+        <member name="M:cs2.IStack`1.IsEmpty">
+            <summary>
+            Tell if a stack contains any items.
+            </summary>
+            <returns><CODE>true</CODE> if there are no items on the stack, otherwise <CODE>false</CODE>.</returns>
+        </member>
+        <member name="T:cs2.Tree`1">
+            <summary>
+            Simple generic tree class.
+            This is an immutable, "open box" data structure,
+            with in-order, pre-order and post-order iterators.
+            </summary>
+            <remarks>
+            Author: George Wells
+            Version: 1.0 (23 September 2013)
+            </remarks>
+        </member>
+        <member name="F:cs2.Tree`1.data">
+            <summary>The data stored in this node.</summary>
+        </member>
+        <member name="F:cs2.Tree`1.lt">
+            <summary>Pointer to left subtree.</summary>
+        </member>
+        <member name="F:cs2.Tree`1.rt">
+            <summary>Pointer to right subtree.</summary>
+        </member>
+        <member name="M:cs2.Tree`1.#ctor(`0,cs2.Tree{`0},cs2.Tree{`0})">
+            <summary>
+            Creates new node with left and right subtrees.
+            </summary>
+            <param name="value">The value to be stored in this node.</param>
+            <param name="left">The left subtree to be added to this node.</param>
+            <param name="right">The right subtree to be added to this node.</param>
+        </member>
+        <member name="M:cs2.Tree`1.#ctor(`0)">
+            <summary>
+            Creates new node without subtrees.
+            </summary>
+            <param name="value">The value to be stored in this node.</param>
+        </member>
+        <member name="M:cs2.Tree`1.Left">
+            <summary>
+            Return the left subtree of a tree.
+            </summary>
+            <returns>Left subtree of this node.</returns>
+        </member>
+        <member name="M:cs2.Tree`1.Right">
+            <summary>
+            Return the right subtree of a tree.
+            </summary>
+            <returns>Right subtree of this node.</returns>
+        </member>
+        <member name="M:cs2.Tree`1.AddLeft(cs2.Tree{`0})">
+            <summary>
+            Add a left subtree to a node.
+            <para><I>Precondition:</I> There is no left subtree.</para>
+            </summary>
+            <param name="left">The new left tree to be added.</param>
+            <exception cref="T:System.InvalidOperationException">if there is a pre-existing left subtree.</exception>
+        </member>
+        <member name="M:cs2.Tree`1.AddRight(cs2.Tree{`0})">
+            <summary>
+            Add a right subtree to a node.
+            <para><I>Precondition:</I> There is no right subtree.</para>
+            </summary>
+            <param name="right">The new right tree to be added.</param>
+            <exception cref="T:System.InvalidOperationException">if there is a pre-existing right subtree.</exception>
+        </member>
+        <member name="M:cs2.Tree`1.GetData">
+            <summary>
+            Access the data value in a node of a tree.
+            </summary>
+            <returns>The data contained in this tree node.</returns>
+        </member>
+    </members>
+</doc>

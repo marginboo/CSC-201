@@ -1,0 +1,11 @@
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\bin\Debug\Sets.exe.config
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\bin\Debug\Sets.exe
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\bin\Debug\Sets.pdb
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\bin\Debug\cs2.pdb
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\bin\Debug\cs2.xml
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\obj\Debug\Sets.csprojAssemblyReference.cache
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\obj\Debug\Sets.csproj.CoreCompileInputs.cache
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\obj\Debug\Sets.csproj.CopyComplete
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\obj\Debug\Sets.exe
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\obj\Debug\Sets.pdb
+C:\Users\g18m6734\Downloads\prac3\Sets\Sets\bin\Debug\cs2.dll

@@ -1,0 +1,36 @@
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.csprojResolveAssemblyReference.cache
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\FamersProblem.exe
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\FamersProblem.pdb
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\cs2.dll
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\cs2.pdb
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\cs2.xml
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.exe
+C:\Users\George Wells\Documents\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.pdb
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\FamersProblem.exe
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\FamersProblem.pdb
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\cs2.dll
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\cs2.pdb
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\bin\Debug\cs2.xml
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.csprojAssemblyReference.cache
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.csproj.CoreCompileInputs.cache
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.csproj.CopyComplete
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.exe
+D:\G.Wells\Visual Studio 2010\Projects\CSc201_2015\FamersProblem\FamersProblem\obj\x86\Debug\FamersProblem.pdb
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\bin\Debug\FamersProblem.exe
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\bin\Debug\FamersProblem.pdb
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\bin\Debug\cs2.dll
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\bin\Debug\cs2.pdb
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\bin\Debug\cs2.xml
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.csproj.CoreCompileInputs.cache
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.csproj.CopyComplete
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.exe
+D:\G.Wells\Visual Studio 2017\Projects\CS2AdvProg_2019\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.pdb
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\bin\Debug\FamersProblem.exe
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\bin\Debug\FamersProblem.pdb
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\bin\Debug\cs2.pdb
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\bin\Debug\cs2.xml
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.csprojAssemblyReference.cache
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.csproj.CoreCompileInputs.cache
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.csproj.CopyComplete
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.exe
+C:\Users\g18m6734\Downloads\New folder\FamersProblemSkel\FamersProblem\obj\x86\Debug\FamersProblem.pdb

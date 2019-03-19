@@ -1,0 +1,14 @@
+C:\Users\g18b8018\source\repos\Practical 3\Sets\bin\Debug\Sets.exe.config
+C:\Users\g18b8018\source\repos\Practical 3\Sets\bin\Debug\Sets.exe
+C:\Users\g18b8018\source\repos\Practical 3\Sets\bin\Debug\Sets.pdb
+C:\Users\g18b8018\source\repos\Practical 3\Sets\obj\Debug\Sets.csprojAssemblyReference.cache
+C:\Users\g18b8018\source\repos\Practical 3\Sets\obj\Debug\Sets.csproj.CoreCompileInputs.cache
+C:\Users\g18b8018\source\repos\Practical 3\Sets\obj\Debug\Sets.exe
+C:\Users\g18b8018\source\repos\Practical 3\Sets\obj\Debug\Sets.pdb
+C:\Users\bobya\Downloads\New WinRAR ZIP archive\Sets\bin\Debug\Sets.exe.config
+C:\Users\bobya\Downloads\New WinRAR ZIP archive\Sets\bin\Debug\Sets.exe
+C:\Users\bobya\Downloads\New WinRAR ZIP archive\Sets\bin\Debug\Sets.pdb
+C:\Users\bobya\Downloads\New WinRAR ZIP archive\Sets\obj\Debug\Sets.csprojAssemblyReference.cache
+C:\Users\bobya\Downloads\New WinRAR ZIP archive\Sets\obj\Debug\Sets.csproj.CoreCompileInputs.cache
+C:\Users\bobya\Downloads\New WinRAR ZIP archive\Sets\obj\Debug\Sets.exe
+C:\Users\bobya\Downloads\New WinRAR ZIP archive\Sets\obj\Debug\Sets.pdb
