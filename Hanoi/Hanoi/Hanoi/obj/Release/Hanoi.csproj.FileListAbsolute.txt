@@ -1,0 +1,14 @@
+E:\18K1405\Hanoi\Hanoi\Hanoi\bin\Release\Hanoi.exe.config
+E:\18K1405\Hanoi\Hanoi\Hanoi\bin\Release\Hanoi.exe
+E:\18K1405\Hanoi\Hanoi\Hanoi\bin\Release\Hanoi.pdb
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\MainWindow.g.cs
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\App.g.cs
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi_MarkupCompile.cache
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi_MarkupCompile.lref
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\MainWindow.baml
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi.g.resources
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi.Properties.Resources.resources
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi.csproj.GenerateResource.cache
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi.csproj.CoreCompileInputs.cache
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi.exe
+E:\18K1405\Hanoi\Hanoi\Hanoi\obj\Release\Hanoi.pdb
